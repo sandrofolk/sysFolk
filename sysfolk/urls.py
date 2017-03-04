@@ -15,16 +15,21 @@ Including another URLconf
 """
 from django.conf import settings
 from django.conf.urls import url, include
+from django.conf.urls.i18n import i18n_patterns
+from django.utils.translation import gettext_lazy as _
 from django.contrib import admin
-# from django.views.generic.base import RedirectView
+from django.views.generic.base import RedirectView
 from jet.dashboard.dashboard_modules import google_analytics_views
 
-urlpatterns = [
+
+urlpatterns = i18n_patterns(
     url(r'^jet/', include('jet.urls', 'jet')),  # Django JET URLS
     url(r'^jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
-    url(r'^admin/', admin.site.urls),
-    # url(r'^$', RedirectView.as_view(url='/admin')),
-]
+    url(_(r'^admin/'), admin.site.urls),
+    url(r'^$', RedirectView.as_view(url='/admin')),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
+    prefix_default_language=False
+)
 
 if settings.DEBUG:
     import debug_toolbar

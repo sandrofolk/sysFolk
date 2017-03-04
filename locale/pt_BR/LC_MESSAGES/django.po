@@ -1,0 +1,253 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-28 22:52+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: sysfolk/core/admin.py:6
+msgid "sysFolk / ConTTudOweb"
+msgstr ""
+
+#: sysfolk/core/admin.py:7
+msgid "sysFolk"
+msgstr ""
+
+#: sysfolk/core/admin.py:8
+msgid "Home"
+msgstr "Início"
+
+#: sysfolk/core/apps.py:7
+msgid "general"
+msgstr "geral"
+
+#: sysfolk/core/models.py:11
+msgid "name"
+msgstr "nome"
+
+#: sysfolk/core/models.py:12
+msgid "is customer"
+msgstr "é cliente?"
+
+#: sysfolk/core/models.py:13
+msgid "is supplier"
+msgstr "é fornecedor?"
+
+#: sysfolk/core/models.py:23
+msgid "person"
+msgstr "pessoa"
+
+#: sysfolk/core/models.py:24
+msgid "persons"
+msgstr "pessoas"
+
+#: sysfolk/dashboard.py:24
+msgid "Quick links"
+msgstr "Links rápidos"
+
+#: sysfolk/dashboard.py:30
+msgid "Return to site"
+msgstr "Voltar ao site"
+
+#: sysfolk/dashboard.py:31
+msgid "Change password"
+msgstr "Alterar senha"
+
+#: sysfolk/dashboard.py:33
+msgid "Log out"
+msgstr "Sair"
+
+#: sysfolk/dashboard.py:41
+msgid "Applications"
+msgstr "Aplicações"
+
+#: sysfolk/dashboard.py:49
+msgid "Administration"
+msgstr "Administração"
+
+#: sysfolk/dashboard.py:57
+msgid "Recent Actions"
+msgstr "Ações recentes"
+
+#: sysfolk/dashboard.py:65
+msgid "Latest Django News"
+msgstr "Últimas Notícias do Django"
+
+#: sysfolk/dashboard.py:74
+msgid "Support"
+msgstr "Suporte"
+
+#: sysfolk/dashboard.py:77
+msgid "Django documentation"
+msgstr "Documentação do Django"
+
+#: sysfolk/dashboard.py:82
+msgid "Django \"django-users\" mailing list"
+msgstr "Lista de e-mail dos usuários do Django"
+
+#: sysfolk/dashboard.py:87
+msgid "Django irc channel"
+msgstr "Canal IRC Django"
+
+#: sysfolk/financial/apps.py:7
+msgid "financial"
+msgstr "financeiro"
+
+#: sysfolk/financial/models.py:7 sysfolk/financial/models.py:18
+#: sysfolk/financial/models.py:29 sysfolk/financial/models.py:46
+#: sysfolk/financial/models.py:67
+msgid "description"
+msgstr "descrição"
+
+#: sysfolk/financial/models.py:13 sysfolk/financial/models.py:70
+msgid "category"
+msgstr "categoria"
+
+#: sysfolk/financial/models.py:14
+msgid "categories"
+msgstr "categorias"
+
+#: sysfolk/financial/models.py:24 sysfolk/financial/models.py:30
+msgid "bank"
+msgstr "banco"
+
+#: sysfolk/financial/models.py:25
+msgid "banks"
+msgstr "bancos"
+
+#: sysfolk/financial/models.py:32
+msgid "agency number"
+msgstr "número da agência"
+
+#: sysfolk/financial/models.py:33
+msgid "agency digit"
+msgstr "dígito da agência"
+
+#: sysfolk/financial/models.py:34
+msgid "account number"
+msgstr "número da conta"
+
+#: sysfolk/financial/models.py:35
+msgid "account digit"
+msgstr "dígito da conta"
+
+#: sysfolk/financial/models.py:41
+msgid "deposit account"
+msgstr "conta financeira"
+
+#: sysfolk/financial/models.py:42
+msgid "deposit accounts"
+msgstr "contas financeiras"
+
+#: sysfolk/financial/models.py:52 sysfolk/financial/models.py:76
+msgid "classification center"
+msgstr "centro de custo"
+
+#: sysfolk/financial/models.py:53
+msgid "classification centers"
+msgstr "centros de custo"
+
+#: sysfolk/financial/models.py:61
+msgid "Normal"
+msgstr "Normal"
+
+#: sysfolk/financial/models.py:62
+msgid "Parcelled"
+msgstr "Parcelado"
+
+#: sysfolk/financial/models.py:63
+msgid "Recurrent"
+msgstr "Recorrente"
+
+#: sysfolk/financial/models.py:65
+msgid "type"
+msgstr "tipo"
+
+#: sysfolk/financial/models.py:68
+msgid "amount"
+msgstr "valor"
+
+#: sysfolk/financial/models.py:69
+msgid "due_date"
+msgstr "data de vencimento"
+
+#: sysfolk/financial/models.py:72
+msgid "document"
+msgstr "documento"
+
+#: sysfolk/financial/models.py:73
+msgid "emission_date"
+msgstr "data de emissão"
+
+#: sysfolk/financial/models.py:74
+msgid "expected deposit account"
+msgstr "conta financeira prevista"
+
+#: sysfolk/financial/models.py:78
+msgid "observation"
+msgstr "observação"
+
+#: sysfolk/financial/models.py:84
+msgid "Unpaid"
+msgstr "Não pago"
+
+#: sysfolk/financial/models.py:85
+msgid "Paid"
+msgstr "Pago"
+
+#: sysfolk/financial/models.py:86
+msgid "Conciliated"
+msgstr "Conciliado"
+
+#: sysfolk/financial/models.py:88
+msgid "situation"
+msgstr "situação"
+
+#: sysfolk/financial/models.py:99
+msgid "customer"
+msgstr "cliente"
+
+#: sysfolk/financial/models.py:103
+msgid "account receivable"
+msgstr "conta a receber"
+
+#: sysfolk/financial/models.py:104
+msgid "accounts receivable"
+msgstr "contas a receber"
+
+#: sysfolk/financial/models.py:108
+msgid "supplier"
+msgstr "fornecedor"
+
+#: sysfolk/financial/models.py:112
+msgid "account payable"
+msgstr "conta a pagar"
+
+#: sysfolk/financial/models.py:113
+msgid "accounts payable"
+msgstr "contas a pagar"
+
+#: sysfolk/settings.py:153
+msgid "Brazilian Portuguese"
+msgstr "Português Brasileiro"
+
+#: sysfolk/settings.py:154
+msgid "English"
+msgstr "Inglês"
+
+#: sysfolk/urls.py:28
+msgid "^admin/"
+msgstr ""

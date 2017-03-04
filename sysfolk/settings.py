@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+from django.utils.translation import ugettext_lazy as _
 from urllib.parse import urlparse
 
 from decouple import config, Csv
@@ -34,9 +35,11 @@ MESSAGE_LEVEL = message_constants.DEBUG
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default=[], cast=Csv())
 
-INTERNAL_IPS = ['127.0.0.1',]
+INTERNAL_IPS = ['127.0.0.1', '0.0.0.0']
 
 ADMINS = [('Alessandro Folk', 'alessandrolimafolk@gmail.com'),]
+
+AUTH_USER_MODEL = 'core.User'
 
 
 # Email configuration
@@ -72,7 +75,8 @@ INSTALLED_APPS = [
     'django_extensions',
     'debug_toolbar',
 
-    'sysfolk.core'
+    'sysfolk.core.apps.CoreConfig',
+    'sysfolk.financial.apps.FinancialConfig',
 ]
 
 MIDDLEWARE = [
@@ -84,6 +88,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'sysfolk.urls'
@@ -99,6 +105,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
             ],
         },
     },
@@ -138,7 +145,18 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
+# LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'pt-br'
+
+# ugettext = lambda s: s
+LANGUAGES = (
+    ('pt-br', _('Brazilian Portuguese')),
+    ('en', _('English')),
+)
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
 
 TIME_ZONE = 'UTC'
 
@@ -147,8 +165,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-# DECIMAL_SEPARATOR = ','
 
 USE_THOUSAND_SEPARATOR = True
 
@@ -201,16 +217,19 @@ JET_THEMES = [
 JET_SIDE_MENU_COMPACT = True
 
 JET_SIDE_MENU_CUSTOM_APPS = [
-    # ('auth', ['__all__']),
-    ('auth', [
-        'Group',
-        'User',
-    ]),
-    # ('core', [
-    #     'User',
-    #     'MenuItem',
-    #     'Block',
+    ('auth', ['__all__']),
+    # ('auth', [
+    #     'Group',
     # ]),
+    ('core', ['__all__']),
+    ('financial', [
+        # 'Category',
+        # 'ClassificationCenter',
+        # 'Bank',
+        # 'DepositAccount',
+        'AccountReceivable',
+        'AccountPayable',
+    ]),
 ]
 
 JET_CHANGE_FORM_SIBLING_LINKS = True
