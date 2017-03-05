@@ -40,7 +40,7 @@ urlpatterns = i18n_patterns(
 
     url(_(r'^admin/'), admin.site.urls),
     url(_(r'^api/'), include(routeCore.urls)),
-    url(r'^$', RedirectView.as_view(url='/admin')),
+    # url(r'^$', RedirectView.as_view(url='/admin')),
     url(r'^i18n/', include('django.conf.urls.i18n')),
     prefix_default_language=False
 )
