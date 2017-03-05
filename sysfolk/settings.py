@@ -138,7 +138,7 @@ else:
     )
 
     STATICFILES_DIRS = (
-        os.path.join(CLIENT_BASE_DIR, 'dist', 'assets'),
+        os.path.join(CLIENT_BASE_DIR, 'dist'),
     )
 
 
