@@ -75,15 +75,41 @@ INSTALLED_APPS = [
     'django_extensions',
     'debug_toolbar',
 
+    'corsheaders',
+
+    'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
+    # 'rest_framework_word_filter',
+
     'sysfolk.core.apps.CoreConfig',
     'sysfolk.financial.apps.FinancialConfig',
 ]
 
+
+# Cors Headers
+CORS_ORIGIN_ALLOW_ALL = True
+
+
+# Rest Framework
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+
+    # DjangoRestFramework
+    'corsheaders.middleware.CorsMiddleware',
+
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',

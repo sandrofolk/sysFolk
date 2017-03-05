@@ -20,12 +20,26 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib import admin
 from django.views.generic.base import RedirectView
 from jet.dashboard.dashboard_modules import google_analytics_views
+from rest_framework import routers
+
+from sysfolk.core.views import PersonViewSet, UserViewSet
+
+routeCore = routers.DefaultRouter(trailing_slash=True)
+routeCore.register(r'person', PersonViewSet)
+routeCore.register(r'user', UserViewSet)
 
 
 urlpatterns = i18n_patterns(
     url(r'^jet/', include('jet.urls', 'jet')),  # Django JET URLS
     url(r'^jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
+
+    # url para autenticação
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    # controle de usuario no navegador
+    url(r'^rest-auth/', include('rest_auth.urls')),
+
     url(_(r'^admin/'), admin.site.urls),
+    url(_(r'^api/'), include(routeCore.urls)),
     url(r'^$', RedirectView.as_view(url='/admin')),
     url(r'^i18n/', include('django.conf.urls.i18n')),
     prefix_default_language=False
