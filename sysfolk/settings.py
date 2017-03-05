@@ -137,9 +137,9 @@ else:
         os.path.join(CLIENT_BASE_DIR, 'dist'),
     )
 
-    STATICFILES_DIRS = (
-        os.path.join(CLIENT_BASE_DIR, 'dist', 'assets'),
-    )
+    # STATICFILES_DIRS = (
+    #     os.path.join(CLIENT_BASE_DIR, 'dist', 'assets'),
+    # )
 
 
 TEMPLATES = [
