@@ -14,3 +14,11 @@ frontend/.tmp
 frontend/bower_components
 frontend/dist
 frontend/src/app/config.js
+
+/frontend_fuse/
+/material-dashboard-html-v1.1.1/
+/themeforest-6434477-neon-bootstrap-admin-theme/
+/material-dashboard-html-v1.1.1.zip
+/themeforest-6434477-neon-bootstrap-admin-theme.zip
+/sysfolk/core/static/neon_v2.0/
+/sysfolk/core/templates/index_neon.html

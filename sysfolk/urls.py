@@ -18,15 +18,17 @@ from django.conf.urls import url, include
 from django.conf.urls.i18n import i18n_patterns
 from django.utils.translation import gettext_lazy as _
 from django.contrib import admin
-from django.views.generic.base import RedirectView
+# from django.views.generic.base import RedirectView
 from jet.dashboard.dashboard_modules import google_analytics_views
 from rest_framework import routers
 
-from sysfolk.core.views import PersonViewSet, UserViewSet
+from sysfolk.authentication.views import MyUserViewSet
+from sysfolk.core.views import home, PersonViewSet
 
-routeCore = routers.DefaultRouter(trailing_slash=True)
-routeCore.register(r'person', PersonViewSet)
-routeCore.register(r'user', UserViewSet)
+router = routers.DefaultRouter(trailing_slash=True)
+router.register(r'user', MyUserViewSet)
+router.register(r'person', PersonViewSet)
+# routeCore.register(r'user', UserViewSet)
 
 
 urlpatterns = i18n_patterns(
@@ -38,8 +40,9 @@ urlpatterns = i18n_patterns(
     # controle de usuario no navegador
     url(r'^rest-auth/', include('rest_auth.urls')),
 
+    url(r'^$', home, name='home'),
     url(_(r'^admin/'), admin.site.urls),
-    url(_(r'^api/'), include(routeCore.urls)),
+    url(_(r'^api/'), include(router.urls)),
     # url(r'^$', RedirectView.as_view(url='/admin')),
     url(r'^i18n/', include('django.conf.urls.i18n')),
     prefix_default_language=False

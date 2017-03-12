@@ -20,7 +20,6 @@ from django.contrib.messages import constants as message_constants
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CLIENT_BASE_DIR = os.path.join(BASE_DIR, 'frontend')
 
 
 # Quick-start development settings - unsuitable for production
@@ -40,7 +39,8 @@ INTERNAL_IPS = ['127.0.0.1', '0.0.0.0']
 
 ADMINS = [('Alessandro Folk', 'alessandrolimafolk@gmail.com'),]
 
-AUTH_USER_MODEL = 'core.User'
+# AUTH_USER_MODEL = 'core.User'
+AUTH_USER_MODEL = 'authentication.MyUser'
 
 
 # Email configuration
@@ -78,11 +78,12 @@ INSTALLED_APPS = [
 
     'corsheaders',
 
-    'rest_framework',
-    'rest_framework.authtoken',
-    'rest_auth',
-    # 'rest_framework_word_filter',
+    # 'rest_framework',
+    # 'rest_framework.authtoken',
+    # 'rest_auth',
+    # # 'rest_framework_word_filter',
 
+    'sysfolk.authentication.apps.AuthenticationConfig',
     'sysfolk.core.apps.CoreConfig',
     'sysfolk.financial.apps.FinancialConfig',
 ]
@@ -122,31 +123,10 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'sysfolk.urls'
 
 
-# Static file and template locations
-if DEBUG:
-    DJANGO_TEMPLATE_DIRS = (
-        os.path.join(CLIENT_BASE_DIR, 'src', 'app'),
-    )
-
-    STATICFILES_DIRS = (
-        os.path.join(CLIENT_BASE_DIR, 'src', 'assets'),
-        # os.path.join(CLIENT_BASE_DIR, '.tmp', 'static')  # Generated CSS files
-    )
-else:
-    DJANGO_TEMPLATE_DIRS = (
-        os.path.join(CLIENT_BASE_DIR, 'dist'),
-    )
-
-    STATICFILES_DIRS = (
-        os.path.join(CLIENT_BASE_DIR, 'dist'),
-    )
-
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # 'DIRS': [],
-        'DIRS': DJANGO_TEMPLATE_DIRS,
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -270,6 +250,7 @@ JET_SIDE_MENU_CUSTOM_APPS = [
     # ('auth', [
     #     'Group',
     # ]),
+    ('authentication', ['__all__']),
     ('core', ['__all__']),
     ('financial', [
         # 'Category',
