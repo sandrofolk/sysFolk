@@ -23,7 +23,8 @@ from jet.dashboard.dashboard_modules import google_analytics_views
 from rest_framework import routers
 
 from sysfolk.authentication.views import MyUserViewSet
-from sysfolk.core.views import home, PersonViewSet
+from sysfolk.core.views import PersonViewSet
+from sysfolk.frontend.views import home, accounts_receivable
 
 router = routers.DefaultRouter(trailing_slash=True)
 router.register(r'user', MyUserViewSet)
@@ -41,6 +42,7 @@ urlpatterns = i18n_patterns(
     url(r'^rest-auth/', include('rest_auth.urls')),
 
     url(r'^$', home, name='home'),
+    url(r'^accounts_receivable/', accounts_receivable, name='accounts_receivable'),
     url(_(r'^admin/'), admin.site.urls),
     url(_(r'^api/'), include(router.urls)),
     # url(r'^$', RedirectView.as_view(url='/admin')),

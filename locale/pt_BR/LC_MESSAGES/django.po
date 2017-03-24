@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-28 22:52+0000\n"
+"POT-Creation-Date: 2017-03-12 16:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,104 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: sysfolk/authentication/admin.py:16
+msgid "Personal info"
+msgstr ""
+
+#: sysfolk/authentication/admin.py:17
+#, fuzzy
+#| msgid "emission_date"
+msgid "Permissions"
+msgstr "data de emissão"
+
+#: sysfolk/authentication/admin.py:19
+msgid "Important dates"
+msgstr ""
+
+#: sysfolk/authentication/apps.py:7
+msgid "authentication"
+msgstr ""
+
+#: sysfolk/authentication/forms.py:22
+msgid "Passwords don't match"
+msgstr ""
+
+#: sysfolk/authentication/managers.py:13
+msgid "Users must have an email address"
+msgstr ""
+
+#: sysfolk/authentication/managers.py:15
+msgid "Users must have an first name"
+msgstr ""
+
+#: sysfolk/authentication/managers.py:38
+msgid "Superuser must have is_staff=True."
+msgstr ""
+
+#: sysfolk/authentication/managers.py:40
+msgid "Superuser must have is_superuser=True."
+msgstr ""
+
+#: sysfolk/authentication/models.py:11
+msgid "email address"
+msgstr ""
+
+#: sysfolk/authentication/models.py:12
+msgid "first name"
+msgstr ""
+
+#: sysfolk/authentication/models.py:13
+#, fuzzy
+#| msgid "name"
+msgid "last name"
+msgstr "nome"
+
+#: sysfolk/authentication/models.py:14
+msgid "date of birth"
+msgstr ""
+
+#: sysfolk/authentication/models.py:16
+msgid "active"
+msgstr ""
+
+#: sysfolk/authentication/models.py:19
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+
+#: sysfolk/authentication/models.py:24
+msgid "staff status"
+msgstr ""
+
+#: sysfolk/authentication/models.py:26
+msgid "Designates whether the user can log into this admin site."
+msgstr ""
+
+#: sysfolk/authentication/models.py:30
+msgid "created at"
+msgstr ""
+
+#: sysfolk/authentication/models.py:31
+msgid "updated at"
+msgstr ""
+
+#: sysfolk/authentication/models.py:39
+msgid "user"
+msgstr ""
+
+#: sysfolk/authentication/models.py:40
+msgid "users"
+msgstr ""
+
+#: sysfolk/authentication/views.py:32
+msgid "Bad request"
+msgstr ""
+
+#: sysfolk/authentication/views.py:33
+msgid "Account could not be created with received data."
+msgstr ""
 
 #: sysfolk/core/admin.py:6
 msgid "sysFolk / ConTTudOweb"
@@ -53,6 +151,10 @@ msgstr "pessoa"
 #: sysfolk/core/models.py:24
 msgid "persons"
 msgstr "pessoas"
+
+#: sysfolk/core/templates/index.html:63
+msgid "Contas a Receber"
+msgstr ""
 
 #: sysfolk/dashboard.py:24
 msgid "Quick links"
@@ -240,14 +342,18 @@ msgstr "conta a pagar"
 msgid "accounts payable"
 msgstr "contas a pagar"
 
-#: sysfolk/settings.py:153
+#: sysfolk/settings.py:183
 msgid "Brazilian Portuguese"
 msgstr "Português Brasileiro"
 
-#: sysfolk/settings.py:154
+#: sysfolk/settings.py:184
 msgid "English"
 msgstr "Inglês"
 
-#: sysfolk/urls.py:28
+#: sysfolk/urls.py:44
 msgid "^admin/"
+msgstr ""
+
+#: sysfolk/urls.py:45
+msgid "^api/"
 msgstr ""

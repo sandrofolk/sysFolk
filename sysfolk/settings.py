@@ -86,6 +86,7 @@ INSTALLED_APPS = [
     'sysfolk.authentication.apps.AuthenticationConfig',
     'sysfolk.core.apps.CoreConfig',
     'sysfolk.financial.apps.FinancialConfig',
+    'sysfolk.frontend',
 ]
 
 
@@ -135,6 +136,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.i18n',
+                'sysfolk.frontend.context_processors.context_processor',
             ],
         },
     },
@@ -270,3 +272,24 @@ JET_APP_INDEX_DASHBOARD = 'jet.dashboard.dashboard.DefaultAppIndexDashboard'
 
 # https://developers.google.com/analytics/devguides/config/mgmt/v3/quickstart/installed-py
 JET_MODULE_GOOGLE_ANALYTICS_CLIENT_SECRETS_FILE = os.path.join(BASE_DIR, 'client_secrets.json')
+
+
+# Frontend
+
+SITE_NAME = 'SysFolk | Sistema financeiro online'
+SITE_SHORT_NAME = 'SysFolk'
+
+# Canonical SEO
+SITE_CANONICAL = 'http://www.conttudoweb.com.br/'
+
+# Social tags
+SITE_KEYWORDS = 'sysfolk, sistema financeiro, sistemas financeiro online'
+SITE_DESCRIPTION = 'Sistemas financeiro online.'
+SITE_IMAGE = 'http://s3.amazonaws.com/creativetim_bucket/products/51/opt_mdp_thumbnail.jpg'  # TODO: Trocar esta imagem!
+
+# Twitter Card data
+TWITTER_SITE = '@conttudoweb'
+TWITTER_CREATOR = '@sandrofolk'
+
+# Open Graph data
+SITE_FB_APP_ID = '6398915760047266458'

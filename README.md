@@ -33,6 +33,14 @@ manage makemessages -l en -l pt_BR
 manage compilemessages
 ```
 
+## Como programar o frontend
+
+1. Instalar o elm.
+
+```console
+npm install -g elm
+```
+
 ## Como fazer o deploy?
 
 1. Crie uma instância no heroku.
